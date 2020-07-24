@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In/Sign Out</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container my-3">
+        {% if user.is_authenticated %}
+            <h1>Hello {{user.first_name}} !!! Thanks for logging in</h1>
+            <hr>
+            <a href="accounts/logout" class="btn btn-danger">SIGN OUT</a>
+        {% else %}
+            <h1>Sign In/Sign Out Example Page</h1>
+            <hr>
+            <a href="accounts/login" class="btn btn-primary">SIGN IN</a>
+            <a href="accounts/register" class="btn btn-success">SIGN UP</a>
+        {% endif %}
+    </div>
+</body>
+</html>
